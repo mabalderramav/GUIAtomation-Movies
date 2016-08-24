@@ -1,0 +1,52 @@
+package org.fundacionjala.movies;
+
+
+/**
+ * Created by AldoBalderrama on 8/23/2016.
+ */
+public abstract class Rental {
+    private Movie movie;
+    private int daysRented;
+    protected final int point;
+
+    /**
+     * Builder to Rental object.
+     * @param movie movie for rental.
+     * @param daysRented days rented.
+     */
+    public Rental(Movie movie, int daysRented) {
+        this.movie = movie;
+        this.daysRented = daysRented;
+        this.point = 1;
+    }
+
+    /**
+     * Obtain days rented.
+     * @return days rented.
+     */
+    public int getDaysRented() {
+        return daysRented;
+    }
+
+    /**
+     * Obtain movie of rental.
+     * @return movie of rental.
+     */
+    public Movie getMovie() {
+        return movie;
+    }
+
+    /**
+     * determine amounts for movie.
+     *
+     * @return amount for movie.
+     */
+    public abstract double calculateAmount();
+
+    /**
+     * Bonus for a two day new release rental
+     *
+     * @return is bonus.
+     */
+    public abstract int calculateFrequentRenterPoints();
+}
