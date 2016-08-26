@@ -2,7 +2,7 @@ package org.fundacionjala.movies;
 
 
 /**
- * Created by AldoBalderrama on 8/23/2016.
+ * Rental.
  */
 public abstract class Rental {
     private Movie movie;
@@ -11,7 +11,8 @@ public abstract class Rental {
 
     /**
      * Builder to Rental object.
-     * @param movie movie for rental.
+     *
+     * @param movie      movie for rental.
      * @param daysRented days rented.
      */
     public Rental(Movie movie, int daysRented) {
@@ -22,6 +23,7 @@ public abstract class Rental {
 
     /**
      * Obtain days rented.
+     *
      * @return days rented.
      */
     public int getDaysRented() {
@@ -30,6 +32,7 @@ public abstract class Rental {
 
     /**
      * Obtain movie of rental.
+     *
      * @return movie of rental.
      */
     public Movie getMovie() {
@@ -44,9 +47,9 @@ public abstract class Rental {
     public abstract double calculateAmount();
 
     /**
-     * Bonus for a two day new release rental
+     * Calculate frequent renter points.
      *
-     * @return is bonus.
+     * @return frequent renter points.
      */
     public abstract int calculateFrequentRenterPoints();
 }

@@ -1,13 +1,23 @@
 package org.fundacionjala.movies;
 
 /**
- * Created by AldoBalderrama on 8/24/2016.
+ * Calculates amount and frequent renter points.
  */
 public class ChildrensRental extends Rental {
+
+    /**
+     * Builder to ChildrenRental object.
+     *
+     * @param movie      movie Object.
+     * @param daysRented days rented.
+     */
     public ChildrensRental(Movie movie, int daysRented) {
         super(movie, daysRented);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public double calculateAmount() {
         double thisAmount = 1.5;
@@ -17,6 +27,9 @@ public class ChildrensRental extends Rental {
         return thisAmount;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int calculateFrequentRenterPoints() {
         return this.point;

@@ -2,13 +2,14 @@ package org.fundacionjala.movies;
 
 
 /**
- * Created by AldoBalderrama on 8/23/2016.
+ * Customer.
  */
 public class Customer {
     private String name;
 
     /**
      * Builder to customer object.
+     *
      * @param name name to customer.
      */
     public Customer(String name) {
@@ -16,7 +17,8 @@ public class Customer {
     }
 
     /**
-     * Obtain name the customer
+     * Obtain name the customer.
+     *
      * @return name.
      */
     public String getName() {

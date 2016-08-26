@@ -1,12 +1,10 @@
 package org.fundacionjala.movies;
 
 import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.List;
-import java.util.Vector;
 
 /**
- * Created by AldoBalderrama on 8/23/2016.
+ * Control Rental.
  */
 public class ControlRental {
     private List<Rental> rentals;
@@ -14,6 +12,7 @@ public class ControlRental {
 
     /**
      * Obtain customer object.
+     *
      * @return Customer object.
      */
     public Customer getCustomer() {
@@ -22,6 +21,7 @@ public class ControlRental {
 
     /**
      * Builder to Control rental object.
+     *
      * @param customer Customer object.
      */
     public ControlRental(Customer customer) {
@@ -31,6 +31,7 @@ public class ControlRental {
 
     /**
      * Obtain count rentals.
+     *
      * @return count rentals.
      */
     public int countRentals() {
@@ -39,6 +40,7 @@ public class ControlRental {
 
     /**
      * Add rental at set Rental object.
+     *
      * @param rental Rental Object.
      */
     public void addRental(Rental rental) {
@@ -47,11 +49,12 @@ public class ControlRental {
 
     /**
      * Obtain calculateStatement the set Rentals.
+     *
      * @return Total amount.
      */
     public double calculateStatement() {
         double totalAmount = 0;
-        for (Rental rental: rentals) {
+        for (Rental rental : rentals) {
             double thisAmount;
             thisAmount = rental.calculateAmount();
             totalAmount += thisAmount;
@@ -60,12 +63,13 @@ public class ControlRental {
     }
 
     /**
-     * Calculated frequent renter points
-     * @return frequent renter points
+     * Calculated frequent renter points.
+     *
+     * @return frequent renter points.
      */
     public int calculateFrequentRenterPoints() {
         int frequentRenterPoints = 0;
-        for (Rental rental: rentals) {
+        for (Rental rental : rentals) {
             frequentRenterPoints += rental.calculateFrequentRenterPoints();
         }
         return frequentRenterPoints;

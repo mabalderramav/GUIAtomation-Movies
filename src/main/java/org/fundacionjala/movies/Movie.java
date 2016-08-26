@@ -1,7 +1,7 @@
 package org.fundacionjala.movies;
 
 /**
- * Created by AldoBalderrama on 8/23/2016.
+ * Movie.
  */
 public class Movie {
     private String title;
@@ -9,7 +9,7 @@ public class Movie {
     /**
      * Builder to Movie object.
      *
-     * @param title     title to movie.
+     * @param title title to movie.
      */
     public Movie(String title) {
         this.title = title;
