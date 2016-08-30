@@ -5,6 +5,9 @@ package org.fundacionjala.movies;
  */
 public class NewReleaseRental extends Rental {
 
+    private static final double THIS_AMOUNT = 3;
+    private static final double INCREMENT = 0;
+    private static final int DAYS_LIMIT = 1;
     /**
      * Builder to ChildrenRental object.
      *
@@ -12,7 +15,7 @@ public class NewReleaseRental extends Rental {
      * @param daysRented days rented.
      */
     public NewReleaseRental(Movie movie, int daysRented) {
-        super(movie, daysRented);
+        super(movie, daysRented, THIS_AMOUNT, INCREMENT, DAYS_LIMIT);
     }
 
     /**
@@ -20,8 +23,7 @@ public class NewReleaseRental extends Rental {
      */
     @Override
     public double calculateAmount() {
-        int mount = 3;
-        return this.getDaysRented() * mount;
+        return this.daysRented * THIS_AMOUNT;
     }
 
     /**
@@ -29,7 +31,6 @@ public class NewReleaseRental extends Rental {
      */
     @Override
     public int calculateFrequentRenterPoints() {
-        int days = 1;
-        return (this.getDaysRented() > days) ? (this.point + 1) : this.point;
+        return (this.daysRented > DAYS_LIMIT) ? (this.POINT + 1) : this.POINT;
     }
 }

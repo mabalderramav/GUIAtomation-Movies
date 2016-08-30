@@ -6,30 +6,30 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Test for {@link ChildrensRentalTest}
+ * Test for {@link ChildrenRentalTest}
  */
-public class ChildrensRentalTest {
+public class ChildrenRentalTest {
 
     private static final double DELTA = 0;
-    private Rental childrensRental;
+    private Rental childrenRental;
 
     @Before
     public void setUp() {
         final String title = "The avenger";
         final int daysRented = 2;
         final Movie movie = new Movie(title);
-        this.childrensRental = new ChildrensRental(movie, daysRented);
+        this.childrenRental = new ChildrenRental(movie, daysRented);
     }
 
     @Test
     public void test_calculateAmount() {
-        final double expected = 1.5;
-        assertEquals(expected, this.childrensRental.calculateAmount(), DELTA);
+        final double expectedAmount = 1.5;
+        assertEquals(expectedAmount, this.childrenRental.calculateAmount(), DELTA);
     }
 
     @Test
     public void test_calculateFrequentRenterPoints() {
-        final int expected = 1;
-        assertEquals(expected, this.childrensRental.calculateFrequentRenterPoints());
+        final int expectedRenterPoints = 1;
+        assertEquals(expectedRenterPoints, this.childrenRental.calculateFrequentRenterPoints());
     }
 }

@@ -42,7 +42,7 @@ public class ControlRentalTest {
     @Test
     public void test_calculateStatement() {
         final double expected = 8.0;
-        assertEquals(expected, this.controlRental.calculateStatement(), DELTA);
+        assertEquals(expected, this.controlRental.calculateTotalAmount(), DELTA);
     }
 
     @Test

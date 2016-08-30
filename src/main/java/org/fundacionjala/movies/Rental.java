@@ -6,8 +6,11 @@ package org.fundacionjala.movies;
  */
 public abstract class Rental {
     private Movie movie;
-    private int daysRented;
-    protected final int point;
+    private double increment;
+    private double thisAmount;
+    protected double daysLimit;
+    protected int daysRented;
+    protected static final int POINT = 1;
 
     /**
      * Builder to Rental object.
@@ -15,19 +18,12 @@ public abstract class Rental {
      * @param movie      movie for rental.
      * @param daysRented days rented.
      */
-    public Rental(Movie movie, int daysRented) {
+    public Rental(Movie movie, int daysRented, double thisAmount, double increment, int daysLimit) {
         this.movie = movie;
         this.daysRented = daysRented;
-        this.point = 1;
-    }
-
-    /**
-     * Obtain days rented.
-     *
-     * @return days rented.
-     */
-    public int getDaysRented() {
-        return daysRented;
+        this.thisAmount = thisAmount;
+        this.increment = increment;
+        this.daysLimit = daysLimit;
     }
 
     /**
@@ -44,12 +40,19 @@ public abstract class Rental {
      *
      * @return amount for movie.
      */
-    public abstract double calculateAmount();
+    public double calculateAmount(){
+        if (this.daysRented > daysLimit) {
+            this.thisAmount += (this.daysRented - daysLimit) * this.increment;
+        }
+        return this.thisAmount;
+    }
 
     /**
      * Calculate frequent renter points.
      *
      * @return frequent renter points.
      */
-    public abstract int calculateFrequentRenterPoints();
+    public int calculateFrequentRenterPoints(){
+        return POINT;
+    }
 }

@@ -11,15 +11,6 @@ public class ControlRental {
     private Customer customer;
 
     /**
-     * Obtain customer object.
-     *
-     * @return Customer object.
-     */
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    /**
      * Builder to Control rental object.
      *
      * @param customer Customer object.
@@ -48,18 +39,13 @@ public class ControlRental {
     }
 
     /**
-     * Obtain calculateStatement the set Rentals.
+     * Obtain calculateTotalAmount the set Rentals.
      *
      * @return Total amount.
      */
-    public double calculateStatement() {
-        double totalAmount = 0;
-        for (Rental rental : rentals) {
-            double thisAmount;
-            thisAmount = rental.calculateAmount();
-            totalAmount += thisAmount;
-        }
-        return totalAmount;
+    public double calculateTotalAmount() {
+        return rentals.stream()
+                .mapToDouble(Rental::calculateAmount).sum();
     }
 
     /**
@@ -68,10 +54,7 @@ public class ControlRental {
      * @return frequent renter points.
      */
     public int calculateFrequentRenterPoints() {
-        int frequentRenterPoints = 0;
-        for (Rental rental : rentals) {
-            frequentRenterPoints += rental.calculateFrequentRenterPoints();
-        }
-        return frequentRenterPoints;
+        return rentals.stream()
+                .mapToInt(Rental::calculateFrequentRenterPoints).sum();
     }
 }
