@@ -5,7 +5,7 @@ package org.fundacionjala.movies;
  */
 public class ChildrenRental extends Rental {
 
-    private static final double THIS_AMOUNT = 1.5;
+    private static final double AMOUNT = 1.5;
     private static final double INCREMENT = 1.5;
     private static final int DAYS_LIMIT = 3;
 
@@ -16,6 +16,6 @@ public class ChildrenRental extends Rental {
      * @param daysRented days rented.
      */
     public ChildrenRental(Movie movie, int daysRented) {
-        super(movie, daysRented, THIS_AMOUNT, INCREMENT, DAYS_LIMIT);
+        super(movie, daysRented, AMOUNT, INCREMENT, DAYS_LIMIT);
     }
 }

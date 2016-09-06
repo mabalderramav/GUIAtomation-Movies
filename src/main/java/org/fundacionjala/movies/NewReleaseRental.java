@@ -31,6 +31,6 @@ public class NewReleaseRental extends Rental {
      */
     @Override
     public int calculateFrequentRenterPoints() {
-        return (this.daysRented > DAYS_LIMIT) ? (this.POINT + 1) : this.POINT;
+        return this.daysRented > DAYS_LIMIT ? POINT + 1 : POINT;
     }
 }
